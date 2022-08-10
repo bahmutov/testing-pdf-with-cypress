@@ -1,5 +1,9 @@
 const { defineConfig } = require('cypress')
 import { readPdf } from 'cypress/scripts/readPdf'
+const { promisify } = require('util')
+const pdf2html = require('pdf2html')
+
+const toHtml = promisify(pdf2html.html)
 
 module.exports = defineConfig({
   e2e: {
@@ -10,6 +14,7 @@ module.exports = defineConfig({
     ) {
       on('task', {
         readPdf,
+        toHtml,
       })
     },
     baseUrl: 'http://localhost:3000',
