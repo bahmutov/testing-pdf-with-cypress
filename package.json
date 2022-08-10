@@ -2,9 +2,10 @@
   "name": "testing-pdf-with-cypress",
   "version": "1.0.0",
   "scripts": {
-    "cy:open": "./node_modules/.bin/cypress open",
-    "cy:run": "./node_modules/.bin/cypress run",
-    "start": "serve app"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "start": "serve app",
+    "dev": "start-test 3000 cy:open"
   },
   "keywords": [
     "cypress"
@@ -18,5 +19,9 @@
     "pdfreader": "^2.0.0",
     "serve": "^14.0.1",
     "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "start-server-and-test": "^1.14.0"
   }
 }
